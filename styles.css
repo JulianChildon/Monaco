@@ -1,0 +1,128 @@
+@font-face{font-family:"Noto Sans SC";src:url("./assets/fonts/noto-sans-sc-300.woff2") format("woff2");font-style:normal;font-weight:300;font-display:swap}
+@font-face{font-family:"Noto Sans SC";src:url("./assets/fonts/noto-sans-sc-400.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:"Noto Sans SC";src:url("./assets/fonts/noto-sans-sc-500.woff2") format("woff2");font-style:normal;font-weight:500;font-display:swap}
+@font-face{font-family:"Noto Serif SC";src:url("./assets/fonts/noto-serif-sc-400.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:"Noto Serif SC";src:url("./assets/fonts/noto-serif-sc-500.woff2") format("woff2");font-style:normal;font-weight:500;font-display:swap}
+@font-face{font-family:"Noto Serif SC";src:url("./assets/fonts/noto-serif-sc-600.woff2") format("woff2");font-style:normal;font-weight:600;font-display:swap}
+
+:root{--wine:#66162a;--wine-deep:#45101d;--paper:#f1eee7;--ink:#241f1b;--gold:#ba9a62;--line:rgba(36,31,27,.22);--serif:"Noto Serif SC","Songti SC",Georgia,serif;--sans:"Noto Sans SC","Microsoft YaHei",Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.75;overflow-x:hidden}a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}.loader{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:var(--wine);color:#fff;transition:opacity .7s,visibility .7s}.loader span{font:600 26px/1 var(--serif);letter-spacing:.25em;border:1px solid rgba(255,255,255,.55);width:100px;height:100px;border-radius:50%;display:grid;place-items:center}.loader.is-hidden{opacity:0;visibility:hidden}.site-header{position:absolute;z-index:30;top:0;left:0;width:100%;height:126px;padding:26px 4.5vw;display:flex;align-items:center;justify-content:space-between;color:#fff;border-bottom:1px solid rgba(255,255,255,.35)}.brand{display:flex;align-items:center;gap:11px;font:600 14px/1.03 var(--serif);letter-spacing:.11em}.brand small{font:500 9px/1 var(--sans);letter-spacing:.3em}.brand-crown{font-size:29px;color:var(--gold)}.desktop-nav{display:flex;gap:38px;font-size:11px;text-transform:uppercase;letter-spacing:.1em}.desktop-nav a{position:relative}.desktop-nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:1px;background:#fff;transition:right .35s}.desktop-nav a:hover:after{right:0}.header-tools{display:flex;align-items:center;gap:28px}.language,.menu-toggle{background:none;border:0;color:inherit;cursor:pointer}.language{font-size:11px;letter-spacing:.15em}.menu-toggle{width:38px;height:30px;display:flex;flex-direction:column;justify-content:center;gap:7px}.menu-toggle i{height:1px;background:currentColor;width:100%;transition:.35s}.hero{position:relative;height:100vh;min-height:720px;color:#fff;overflow:hidden}.hero-photo{position:absolute;inset:0;background-image:url("./assets/images/hero-throne-room.jpg");background-size:cover;background-position:center 44%;transform:scale(1.02)}.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(34,7,14,.72) 0%,rgba(34,7,14,.18) 58%,rgba(0,0,0,.32)),linear-gradient(0deg,rgba(0,0,0,.25),transparent 40%)}.hero-copy{position:absolute;left:8vw;top:50%;transform:translateY(-40%)}.eyebrow{font-size:10px;line-height:1.4;text-transform:uppercase;letter-spacing:.24em;margin:0 0 24px;color:var(--wine)}.eyebrow.light{color:#fff}.hero h1,.intro h2,.section-heading h2,.story h2,.groups h2,.guides h2,.contact h2{font-family:var(--serif);font-weight:400}.hero h1{font-size:clamp(64px,8vw,128px);line-height:.78;letter-spacing:-.045em;margin:0;max-width:1050px}.hero h1 em,.intro h2 em{font-weight:400}.round-link{margin-top:52px;width:96px;height:96px;border:1px solid currentColor;border-radius:50%;display:flex;align-items:center;justify-content:center;gap:10px;text-transform:uppercase;font-size:9px;line-height:1.2;letter-spacing:.13em;transition:.35s}.round-link b{font-size:18px;font-weight:400}.round-link:hover{background:#fff;color:var(--wine)}.photo-credit{position:absolute;right:3vw;bottom:34px;margin:0;font-size:8px;letter-spacing:.15em;writing-mode:vertical-rl}.scroll-mark{position:absolute;bottom:35px;left:50%;font-size:8px;letter-spacing:.22em;transform:translateX(-50%)}.intro{min-height:930px;padding:155px 8vw 110px;position:relative;overflow:hidden}.intro-title{position:relative;z-index:2}.section-no{display:inline-block;border-bottom:1px solid var(--ink);padding-bottom:8px;font-size:10px;letter-spacing:.2em}.intro h2{font-size:clamp(62px,8.3vw,130px);line-height:.78;letter-spacing:-.05em;margin:42px 0 0}.arch-window{position:absolute;right:8vw;bottom:40px;width:37vw;height:590px;border-radius:50% 50% 2px 2px/32% 32% 2px 2px;background:url("./assets/images/palace-exterior.jpg") center/cover;box-shadow:0 25px 80px rgba(45,25,20,.18)}.ornament{position:absolute;left:9vw;bottom:105px;color:var(--gold);font-size:94px;opacity:.7}.story{padding:170px 8vw;background:#e6dfd4}.story-lead{max-width:960px;margin-left:auto}.story h2{font-size:clamp(50px,6vw,94px);line-height:.92;letter-spacing:-.035em;margin:0}.standfirst{font:400 clamp(22px,2.1vw,32px)/1.35 var(--serif);max-width:720px;margin:55px 0 100px}.story-grid{display:grid;grid-template-columns:minmax(320px,1.08fr) minmax(300px,.72fr);gap:10vw;align-items:center}.portrait-image{height:760px;margin:0;background:url("./assets/images/historic-throne-room.jpg") center/cover;position:relative}.portrait-image span{position:absolute;left:-28px;bottom:35px;transform:rotate(-90deg);transform-origin:left top;color:#fff;font-size:8px;letter-spacing:.2em}.story-text p{margin:0 0 26px}.text-link,.news-card>a{display:inline-flex;gap:25px;border-bottom:1px solid currentColor;padding-bottom:8px;text-transform:uppercase;font-size:10px;letter-spacing:.12em;margin-top:26px}.quote-band{height:118px;background:var(--wine);color:#fff;display:flex;align-items:center;overflow:hidden}.marquee{white-space:nowrap;display:flex;font:400 45px/1 var(--serif);letter-spacing:.12em;animation:marquee 26s linear infinite}.marquee span{padding-right:20px}@keyframes marquee{to{transform:translateX(-50%)}}.news{padding:160px 5vw 180px}.section-heading{text-align:center;margin-bottom:80px}.section-heading h2{font-size:clamp(58px,7vw,105px);line-height:.9;margin:0}.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5vw}.news-card:nth-child(2){margin-top:100px}.news-image{height:520px;background-size:cover;background-position:center;filter:saturate(.72)}.news-one{background-image:url("./assets/images/palace-exterior.jpg")}.news-two{background-image:url("./assets/images/restoration-art.jpg")}.news-three{background-image:url("./assets/images/historic-throne-room.jpg")}.card-index{font-size:9px;letter-spacing:.18em;margin:24px 0 11px;color:var(--wine)}.news-card h3{font:400 34px/1.05 var(--serif);margin:0;min-height:72px}.groups{min-height:820px;display:grid;grid-template-columns:1.12fr .88fr}.groups-art{background:url("./assets/images/palace-exterior.jpg") center/cover}.groups-panel{background:var(--wine);color:#fff;padding:130px 8vw;display:flex;flex-direction:column;justify-content:center}.groups h2{font-size:clamp(66px,7vw,110px);line-height:.8;letter-spacing:-.04em;margin:0 0 45px}.groups-panel>p:not(.eyebrow){max-width:520px}.button-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}.outline-button{border:1px solid rgba(255,255,255,.7);padding:15px 20px;text-transform:uppercase;font-size:9px;letter-spacing:.12em;transition:.3s}.outline-button:hover{background:#fff;color:var(--wine)}.practical{padding:170px 8vw}.practical-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:9vw;align-items:center}.practical-image{height:690px;background:url("./assets/images/palace-exterior.jpg") center/cover;background-color:#b69c7d}.season{font-size:9px;letter-spacing:.2em;color:var(--wine)}.practical-copy h3{font:400 clamp(40px,4vw,64px)/.98 var(--serif);margin:20px 0 55px}.info-item{border-top:1px solid var(--line)}.info-item:last-child{border-bottom:1px solid var(--line)}.accordion-trigger{width:100%;padding:25px 2px;border:0;background:none;display:flex;justify-content:space-between;text-align:left;cursor:pointer;font:500 20px/1.2 var(--serif)}.accordion-trigger b{font:400 24px/1 var(--sans);color:var(--wine)}.accordion-content{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s ease}.accordion-content>*{overflow:hidden;margin:0}.accordion-content.open{grid-template-rows:1fr}.accordion-content.open p{padding:0 32px 28px 0}.guides{background:var(--wine-deep);color:#fff;padding:150px 8vw;display:grid;grid-template-columns:.7fr 1.3fr;gap:10vw}.guides h2{font-size:95px;line-height:.9;margin:0 0 40px}.guides-copy>p:last-child{max-width:390px}.guide-row{display:grid;grid-template-columns:45px 1fr 30px;align-items:center;border-top:1px solid rgba(255,255,255,.35);padding:28px 0}.guide-row:last-child{border-bottom:1px solid rgba(255,255,255,.35)}.guide-row span{font-size:9px;letter-spacing:.14em}.guide-row h3{font:400 28px/1.2 var(--serif);margin:0}.guide-row b{font-weight:400;font-size:20px}.faq{padding:170px 12vw}.faq-list{max-width:920px;margin:auto}.faq .accordion-trigger{font-size:27px;padding:31px 0}.contact{padding:150px 10vw;background:#722036;color:#fff;display:grid;grid-template-columns:.8fr 1.2fr;gap:12vw}.contact h2{font-size:clamp(58px,6vw,90px);line-height:.9;margin:0 0 50px}.contact-copy>a{font:400 25px/1 var(--serif);border-bottom:1px solid rgba(255,255,255,.6)}.contact-form label{display:block;border-bottom:1px solid rgba(255,255,255,.45);padding:22px 0}.contact-form label span{display:block;font-size:9px;letter-spacing:.15em;text-transform:uppercase}.contact-form input,.contact-form textarea{width:100%;background:none;border:0;color:#fff;outline:0;padding:10px 0;resize:none}.submit-button{margin-top:35px;padding:16px 21px;border:1px solid #fff;background:none;color:#fff;text-transform:uppercase;font-size:9px;letter-spacing:.15em;cursor:pointer}.submit-button span{margin-left:20px}footer{min-height:360px;background:#201d1a;color:#fff;padding:70px 6vw 35px;display:grid;grid-template-columns:1fr .7fr .7fr;gap:5vw;position:relative}footer>div{display:flex;flex-direction:column;align-items:flex-start}footer>div a{font:400 21px/1.8 var(--serif)}.footer-label{font-size:9px;letter-spacing:.18em;color:#aaa}.footer-brand{align-self:start;font-size:21px}.copyright{position:absolute;left:6vw;bottom:25px;font-size:8px;letter-spacing:.15em;color:#888}.menu-overlay{position:fixed;z-index:20;inset:0;background:var(--wine);color:#fff;display:grid;place-items:center;transform:translateY(-100%);transition:.55s cubic-bezier(.77,0,.18,1)}.menu-overlay.is-open{transform:none}.menu-overlay nav{display:flex;flex-direction:column;text-align:center}.menu-overlay a{font:400 clamp(42px,7vw,90px)/1.12 var(--serif)}body.menu-open{overflow:hidden}.menu-open .site-header{position:fixed}.menu-open .menu-toggle i:first-child{transform:translateY(4px) rotate(45deg)}.menu-open .menu-toggle i:last-child{transform:translateY(-4px) rotate(-45deg)}.reveal{opacity:0;transform:translateY(35px);transition:opacity .9s ease,transform .9s ease}.reveal.in-view{opacity:1;transform:none}
+@media(max-width:900px){.site-header{height:95px}.desktop-nav{display:none}.hero{min-height:650px}.hero-copy{left:7vw;top:54%}.hero h1{font-size:clamp(55px,15vw,88px);line-height:.84}.scroll-mark{display:none}.intro{min-height:760px;padding:120px 7vw}.intro h2{font-size:clamp(57px,15vw,92px)}.arch-window{width:52vw;height:390px;right:-8vw;bottom:30px}.story{padding:110px 7vw}.story-grid{grid-template-columns:1fr;gap:60px}.portrait-image{height:620px}.news{padding:110px 7vw}.news-grid{grid-template-columns:1fr 1fr}.news-card:nth-child(2){margin-top:60px}.news-card:nth-child(3){margin-top:0}.groups{grid-template-columns:1fr}.groups-art{min-height:500px}.groups-panel{padding:100px 8vw}.practical{padding:110px 7vw}.practical-layout{grid-template-columns:1fr;gap:60px}.practical-image{height:550px}.guides{grid-template-columns:1fr;gap:60px;padding:100px 8vw}.faq{padding:110px 8vw}.contact{grid-template-columns:1fr;gap:70px;padding:100px 8vw}}
+@media(max-width:600px){.site-header{padding:20px 6vw}.header-tools{gap:10px}.hero{height:92vh}.hero-copy{top:49%;transform:translateY(-25%)}.hero h1{font-size:51px}.round-link{width:78px;height:78px;margin-top:40px}.intro{min-height:690px}.intro h2{font-size:52px;line-height:.83}.arch-window{width:70vw;height:335px}.ornament{font-size:58px}.story h2{font-size:47px}.standfirst{font-size:23px;margin:38px 0 60px}.portrait-image{height:480px}.quote-band{height:90px}.marquee{font-size:32px}.news-grid{grid-template-columns:1fr;gap:65px}.news-card:nth-child(2){margin-top:0}.news-image{height:470px}.groups-art{min-height:380px}.groups h2{font-size:66px}.section-heading{margin-bottom:55px}.section-heading h2{font-size:55px}.practical-image{height:420px}.guides h2{font-size:70px}.guide-row h3{font-size:23px}.faq .accordion-trigger{font-size:22px}.contact h2{font-size:57px}footer{grid-template-columns:1fr;gap:40px;padding-bottom:80px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.marquee{animation:none}}
+
+/* Chinese single-page editorial edition */
+html[lang="zh-CN"] body{font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;font-weight:300;line-height:1.9}
+html[lang="zh-CN"] h1,
+html[lang="zh-CN"] h2,
+html[lang="zh-CN"] h3,
+html[lang="zh-CN"] .brand,
+html[lang="zh-CN"] .timeline-year{font-family:"Noto Serif SC","Songti SC",serif}
+html[lang="zh-CN"] .brand{line-height:1.25;letter-spacing:.18em}
+html[lang="zh-CN"] .brand small{letter-spacing:.45em}
+html[lang="zh-CN"] .desktop-nav{letter-spacing:.16em}
+html[lang="zh-CN"] .hero h1{font-family:"Noto Serif SC","Songti SC",serif;font-size:clamp(76px,9.2vw,142px);font-weight:400;line-height:.93;letter-spacing:.04em}
+html[lang="zh-CN"] .hero h1 em{font-style:normal;margin-left:1em}
+html[lang="zh-CN"] .eyebrow{letter-spacing:.34em}
+html[lang="zh-CN"] .intro{min-height:1050px;padding-top:145px}
+html[lang="zh-CN"] .intro-title .eyebrow{margin:34px 0 20px}
+html[lang="zh-CN"] .intro h2{font-family:"Noto Serif SC","Songti SC",serif;font-size:clamp(62px,7.5vw,116px);font-weight:400;line-height:1.08;letter-spacing:.02em;margin-top:0}
+html[lang="zh-CN"] .intro h2 em{font-style:normal;color:var(--wine)}
+.intro-summary{max-width:430px;margin:80px 0 0 4vw;position:relative;z-index:3}
+.placeholder{color:inherit}
+.placeholder::first-letter{font-weight:400}
+.chapter-heading{display:grid;grid-template-columns:100px 1fr;gap:3vw;align-items:start}
+.chapter-heading h2{font:400 clamp(62px,7.4vw,112px)/1.06 "Noto Serif SC","Songti SC",serif;letter-spacing:.02em;margin:0}
+.section-no.pale{color:rgba(255,255,255,.68);border-color:rgba(255,255,255,.45)}
+.history-section{background:var(--wine-deep);color:#fff;padding:155px 8vw 175px}
+.history-section .chapter-heading{margin-bottom:105px}
+.timeline{margin-left:17vw;border-top:1px solid rgba(255,255,255,.32)}
+.timeline-item{display:grid;grid-template-columns:minmax(150px,.42fr) 1fr;gap:7vw;padding:52px 0;border-bottom:1px solid rgba(255,255,255,.32)}
+.timeline-year{font-size:clamp(42px,4vw,66px);font-weight:400;line-height:1;margin:0;color:var(--gold)}
+.timeline-item h3{font-size:31px;font-weight:400;line-height:1.2;margin:0 0 18px}
+.timeline-item div p{max-width:560px;margin:0;color:rgba(255,255,255,.76)}
+.architecture{padding:165px 5vw 185px}
+.architecture .section-heading .section-no,.visit-section .section-heading .section-no{margin-bottom:32px}
+.heading-note{max-width:620px;margin:38px auto 0}
+.space-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5vw;align-items:start}
+.space-card:nth-child(2){margin-top:110px}
+.space-image{height:560px;background-position:center;background-size:cover;filter:saturate(.72)}
+.space-one{background-image:url("./assets/images/palace-exterior.jpg")}
+.space-two{background-image:url("./assets/images/hero-throne-room.jpg")}
+.space-three{background-image:url("./assets/images/historic-throne-room.jpg")}
+.space-card h3{font-size:37px;font-weight:400;line-height:1.2;margin:0 0 20px}
+.space-card>p:last-child{max-width:390px;margin-top:0}
+html[lang="zh-CN"] .marquee{font-family:"Noto Serif SC","Songti SC",serif;font-size:38px;letter-spacing:.22em}
+html[lang="zh-CN"] .story h2{font-family:"Noto Serif SC","Songti SC",serif;font-size:clamp(58px,6.2vw,96px);line-height:1.08;letter-spacing:.03em}
+.story-lead .section-no{margin-bottom:34px}
+html[lang="zh-CN"] .standfirst{font-family:"Noto Serif SC","Songti SC",serif;font-size:clamp(21px,1.9vw,29px);line-height:1.75}
+.story-text h3{font-size:38px;font-weight:400;line-height:1.3;margin:0 0 35px}
+.preservation{min-height:850px;display:grid;grid-template-columns:1.12fr .88fr}
+.preservation-art{background:url("./assets/images/restoration-art.jpg") center/cover;filter:saturate(.6)}
+.preservation-panel{background:var(--wine);color:#fff;padding:120px 8vw;display:flex;flex-direction:column;justify-content:center}
+.preservation-panel .section-no{align-self:flex-start;margin-bottom:42px}
+.preservation-panel h2{font:400 clamp(64px,6.8vw,104px)/1.08 "Noto Serif SC","Songti SC",serif;letter-spacing:.04em;margin:0 0 50px}
+.preservation-panel>p:not(.eyebrow){max-width:500px;color:rgba(255,255,255,.82)}
+.today-section{padding:170px 8vw;display:grid;grid-template-columns:.85fr 1.15fr;gap:10vw;align-items:center}
+.today-copy .section-no{margin-bottom:38px}
+.today-copy h2{font:400 clamp(54px,5.5vw,82px)/1.1 "Noto Serif SC","Songti SC",serif;letter-spacing:.02em;margin:0 0 48px}
+.today-copy>p:not(.eyebrow){max-width:510px;margin-bottom:25px}
+.today-image{height:720px;border-radius:50% 50% 0 0/25% 25% 0 0;background:url("./assets/images/palace-exterior.jpg") center/cover}
+.visit-section{background:#211e1b;color:#fff;padding:155px 8vw 170px}
+.visit-section .heading-note{color:rgba(255,255,255,.68)}
+.visit-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:90px;border-top:1px solid rgba(255,255,255,.3);border-bottom:1px solid rgba(255,255,255,.3)}
+.visit-item{padding:45px 3vw 55px;border-right:1px solid rgba(255,255,255,.3)}
+.visit-item:first-child{padding-left:0}
+.visit-item:last-child{border-right:0}
+.visit-item>span{font-size:9px;letter-spacing:.18em;color:var(--gold)}
+.visit-item h3{font-size:28px;font-weight:400;margin:25px 0 20px}
+.visit-item p{margin:0;color:rgba(255,255,255,.72)}
+html[lang="zh-CN"] footer>div a{font-family:"Noto Serif SC","Songti SC",serif;font-size:18px;line-height:2}
+
+@media(max-width:900px){
+  html[lang="zh-CN"] .hero h1{font-size:clamp(68px,14vw,104px)}
+  html[lang="zh-CN"] .intro{min-height:900px;padding-top:115px}
+  html[lang="zh-CN"] .intro h2{font-size:clamp(55px,11vw,82px)}
+  .intro-summary{max-width:360px;margin:50px 0 0}
+  .history-section{padding:110px 7vw 125px}
+  .chapter-heading{grid-template-columns:65px 1fr}
+  .history-section .chapter-heading{margin-bottom:70px}
+  .timeline{margin-left:0}
+  .architecture{padding:110px 7vw 130px}
+  .space-grid{grid-template-columns:1fr 1fr}
+  .space-card:nth-child(2){margin-top:65px}
+  .space-card:nth-child(3){margin-top:0}
+  .space-image{height:500px}
+  .preservation{grid-template-columns:1fr}
+  .preservation-art{min-height:500px}
+  .preservation-panel{padding:100px 8vw}
+  .today-section{padding:115px 7vw;grid-template-columns:1fr;gap:70px}
+  .today-image{height:580px}
+  .visit-grid{grid-template-columns:1fr 1fr}
+  .visit-item{border-bottom:1px solid rgba(255,255,255,.3)}
+  .visit-item:nth-child(2){border-right:0}
+  .visit-item:nth-child(3),.visit-item:nth-child(4){border-bottom:0}
+  .visit-item:nth-child(3){padding-left:0}
+}
+@media(max-width:600px){
+  html[lang="zh-CN"] .hero h1{font-size:58px;line-height:1}
+  html[lang="zh-CN"] .hero h1 em{margin-left:.6em}
+  html[lang="zh-CN"] .intro{min-height:820px}
+  html[lang="zh-CN"] .intro h2{font-size:48px}
+  .intro-summary{margin-top:38px;max-width:82%}
+  .chapter-heading{grid-template-columns:1fr;gap:30px}
+  .chapter-heading h2{font-size:51px}
+  .timeline-item{grid-template-columns:1fr;gap:24px;padding:38px 0}
+  .timeline-year{font-size:39px}
+  .space-grid{grid-template-columns:1fr;gap:70px}
+  .space-card:nth-child(2){margin-top:0}
+  .space-image{height:460px}
+  html[lang="zh-CN"] .story h2{font-size:49px}
+  .preservation-art{min-height:390px}
+  .preservation-panel h2{font-size:56px}
+  .today-image{height:460px}
+  .visit-section{padding:105px 7vw 120px}
+  .visit-grid{grid-template-columns:1fr;margin-top:60px}
+  .visit-item,.visit-item:nth-child(3){padding:35px 0;border-right:0;border-bottom:1px solid rgba(255,255,255,.3)}
+  .visit-item:last-child{border-bottom:0}
+}
