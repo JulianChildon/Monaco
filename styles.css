@@ -205,6 +205,11 @@ html[lang="zh-CN"] footer>div a{font-family:"Noto Serif SC","Songti SC",serif;fo
   .hero-stage{height:100svh;min-height:600px}
   .hero-chapter{bottom:14vh}
   .hero-chapter small{font-size:9px;letter-spacing:.12em}
+  html[lang="zh-CN"] .intro{min-height:0;padding:100px 7vw 90px;display:flex;flex-direction:column}
+  html[lang="zh-CN"] .intro h2{font-size:clamp(43px,12vw,52px);line-height:1.12}
+  .intro-summary{max-width:100%;margin:42px 0 0}
+  .arch-window{position:relative;right:auto;bottom:auto;width:100%;height:min(112vw,470px);margin-top:48px;flex:none}
+  .ornament{left:auto;right:9vw;bottom:55px;font-size:48px;z-index:2}
 }
 
 @media(prefers-reduced-motion:reduce){
