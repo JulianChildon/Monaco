@@ -47,9 +47,17 @@ html[lang="zh-CN"] .intro h2 em{font-style:normal;color:var(--wine)}
 .space-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5vw;align-items:start}
 .space-card:nth-child(2){margin-top:110px}
 .space-image{height:560px;background-position:center;background-size:cover;filter:saturate(.72)}
-.space-one{background-image:url("./assets/images/palace-exterior.jpg")}
+.space-one{
+  height:600px;
+  background-image:url("./assets/images/COUR D'HONNEUR.webp");
+  background-position:50% 50%;
+}
 .space-two{background-image:url("./assets/images/hero-throne-room.jpg")}
-.space-three{background-image:url("./assets/images/historic-throne-room.jpg")}
+.space-three{
+  height:520px;
+  background-image:url("./assets/images/Les_grands_appartements.jpg");
+  background-position:50% 48%;
+}
 .space-card h3{font-size:37px;font-weight:400;line-height:1.2;margin:0 0 20px}
 .space-card>p:last-child{max-width:390px;margin-top:0}
 html[lang="zh-CN"] .marquee{font-family:"Noto Serif SC","Songti SC",serif;font-size:38px;letter-spacing:.22em}
@@ -92,7 +100,7 @@ html[lang="zh-CN"] footer>div a{font-family:"Noto Serif SC","Songti SC",serif;fo
   .space-grid{grid-template-columns:1fr 1fr}
   .space-card:nth-child(2){margin-top:65px}
   .space-card:nth-child(3){margin-top:0}
-  .space-image{height:500px}
+  .space-image,.space-one,.space-three{height:500px}
   .preservation{grid-template-columns:1fr}
   .preservation-art{min-height:500px}
   .preservation-panel{padding:100px 8vw}
@@ -116,7 +124,7 @@ html[lang="zh-CN"] footer>div a{font-family:"Noto Serif SC","Songti SC",serif;fo
   .timeline-year{font-size:39px}
   .space-grid{grid-template-columns:1fr;gap:70px}
   .space-card:nth-child(2){margin-top:0}
-  .space-image{height:460px}
+  .space-image,.space-one,.space-three{height:460px}
   html[lang="zh-CN"] .story h2{font-size:49px}
   .preservation-art{min-height:390px}
   .preservation-panel h2{font-size:56px}
@@ -125,4 +133,15 @@ html[lang="zh-CN"] footer>div a{font-family:"Noto Serif SC","Songti SC",serif;fo
   .visit-grid{grid-template-columns:1fr;margin-top:60px}
   .visit-item,.visit-item:nth-child(3){padding:35px 0;border-right:0;border-bottom:1px solid rgba(255,255,255,.3)}
   .visit-item:last-child{border-bottom:0}
+}
+
+/* Opening image */
+.hero-photo{
+  background-image:url("./assets/images/prince-palace-monaco1.webp");
+  background-position:50% 45%;
+  background-size:cover;
+}
+
+@media(max-width:600px){
+  .hero-photo{background-position:53% center}
 }

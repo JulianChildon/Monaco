@@ -4,6 +4,9 @@
 
 ## 图片来源
 
+- `COUR D'HONNEUR.webp`：项目提供的亲王宫荣誉庭院照片，用于“建筑与空间”章节
+- `Les_grands_appartements.jpg`：项目提供的国家套房照片，用于“建筑与空间”章节
+- `prince-palace-monaco1.webp`：项目提供的摩纳哥亲王宫王座厅照片，用作网站首屏背景
 - `hero-throne-room.jpg`：Wikimedia Commons，文件名 `Trono palaco principe monaco.jpg`
 - `palace-exterior.jpg`：Wikimedia Commons，Pierre Blaché，CC0 1.0
 - `historic-throne-room.jpg`：Wikimedia Commons，文件名 `Salle du trône, palais princier, Monaco - btv1b105784834.jpg`
