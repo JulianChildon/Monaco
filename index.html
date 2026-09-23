@@ -9,6 +9,7 @@
 </head>
 <body>
   <div class="loader" aria-hidden="true"><span>PPM</span></div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
   <header class="site-header" id="top">
     <a class="brand" href="#top" aria-label="返回首页">
@@ -28,16 +29,24 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-photo" role="img" aria-label="摩纳哥亲王宫王座厅"></div>
-      <div class="hero-shade"></div>
-      <div class="hero-copy reveal">
-        <p class="eyebrow light">地中海之上的王室居所</p>
-        <h1>摩纳哥<br><em>亲王宫</em></h1>
-        <a href="#overview" class="round-link light" aria-label="探索宫殿"><span>探索<br>宫殿</span><b>↓</b></a>
+    <section class="hero cinematic-section" data-cinematic="hero">
+      <div class="hero-stage">
+        <div class="hero-photo" role="img" aria-label="摩纳哥亲王宫王座厅"></div>
+        <div class="hero-exterior" role="img" aria-label="夜色中的摩纳哥亲王宫外观"></div>
+        <div class="hero-shade"></div>
+        <div class="hero-copy">
+          <p class="eyebrow light">地中海之上的王室居所</p>
+          <h1>摩纳哥<br><em>亲王宫</em></h1>
+          <a href="#overview" class="round-link light" aria-label="探索宫殿"><span>探索<br>宫殿</span><b>↓</b></a>
+        </div>
+        <div class="hero-chapter" aria-hidden="true">
+          <span>LE ROCHER · MONACO</span>
+          <p>岩石之上</p>
+          <small>自 1297 年，格里马尔迪家族的历史在此延续</small>
+        </div>
+        <p class="photo-credit">摩纳哥亲王宫</p>
+        <span class="scroll-mark">向下探索</span>
       </div>
-      <p class="photo-credit">摩纳哥亲王宫</p>
-      <span class="scroll-mark">向下探索</span>
     </section>
 
     <section class="intro" id="overview">
@@ -54,19 +63,22 @@
       <div class="ornament" aria-hidden="true">✦</div>
     </section>
 
-    <section class="history-section" id="history">
-      <div class="chapter-heading reveal">
-        <span class="section-no pale">02</span>
-        <div>
-          <p class="eyebrow light">历史沿革</p>
-          <h2>从海边堡垒<br>到王室居所</h2>
+    <section class="history-section cinematic-section" id="history" data-cinematic="history">
+      <div class="history-stage">
+        <div class="chapter-heading">
+          <span class="section-no pale">02</span>
+          <div>
+            <p class="eyebrow light">历史沿革</p>
+            <h2>从海边堡垒<br>到王室居所</h2>
+          </div>
         </div>
-      </div>
-      <div class="timeline">
-        <article class="timeline-item reveal"><p class="timeline-year">1215</p><div><h3>堡垒初建</h3><p class="placeholder">1215年，一座新的堡垒开始动工修建。最初由四座塔楼组成，各塔楼之间通过防御性城垒相连，外围则由幕式城墙加以保护。这一早期堡垒结构构成了了今日摩纳哥亲王宫的建筑核心。</p></div></article>
-        <article class="timeline-item reveal"><p class="timeline-year">1297</p><div><h3>家族历史</h3><p class="placeholder">根据记载，1297年1月，弗朗索瓦·格里马尔迪（François Grimaldi）乔装成修士进入堡垒。在成功进入之后，他的支持者随即里应外合夺取了这座要塞，由此开启了这座宫殿与格里马尔迪家族延续数百年的深厚联系。</p></div></article>
-        <article class="timeline-item reveal"><p class="timeline-year">XVI</p><div><h3>文艺复兴</h3><p class="placeholder">在16世纪，随着政治局势日趋稳定，格里马尔迪家族得以将部分原本以防御功能为主的宫邸改建为更加舒适的文艺复兴式宫殿。庭院周围陆续增建了拱廊、长廊、居住空间，并加入大量壁画装饰，使宫殿逐渐从军事要塞转变为兼具居住、礼仪与艺术功能的王室宫殿。</p></div></article>
-        <article class="timeline-item reveal"><p class="timeline-year">TODAY</p><div><h3>今日宫殿</h3><p class="placeholder">如今，这座宫殿是阿尔贝二世亲王的王室居所。每逢夏季，宫殿的客房都会向游客开放。时至今日，这里依然承担着王室居所的重要职能，也是摩纳哥公共生活的核心场所。</p></div></article>
+        <div class="timeline" aria-live="polite">
+          <article class="timeline-item is-active"><p class="timeline-year">1215</p><div><h3>堡垒初建</h3><p class="placeholder">1215年，一座新的堡垒开始动工修建。最初由四座塔楼组成，各塔楼之间通过防御性城垒相连，外围则由幕式城墙加以保护。这一早期堡垒结构构成了了今日摩纳哥亲王宫的建筑核心。</p></div></article>
+          <article class="timeline-item"><p class="timeline-year">1297</p><div><h3>家族历史</h3><p class="placeholder">根据记载，1297年1月，弗朗索瓦·格里马尔迪（François Grimaldi）乔装成修士进入堡垒。在成功进入之后，他的支持者随即里应外合夺取了这座要塞，由此开启了这座宫殿与格里马尔迪家族延续数百年的深厚联系。</p></div></article>
+          <article class="timeline-item"><p class="timeline-year">XVI</p><div><h3>文艺复兴</h3><p class="placeholder">在16世纪，随着政治局势日趋稳定，格里马尔迪家族得以将部分原本以防御功能为主的宫邸改建为更加舒适的文艺复兴式宫殿。庭院周围陆续增建了拱廊、长廊、居住空间，并加入大量壁画装饰，使宫殿逐渐从军事要塞转变为兼具居住、礼仪与艺术功能的王室宫殿。</p></div></article>
+          <article class="timeline-item"><p class="timeline-year">TODAY</p><div><h3>今日宫殿</h3><p class="placeholder">如今，这座宫殿是阿尔贝二世亲王的王室居所。每逢夏季，宫殿的客房都会向游客开放。时至今日，这里依然承担着王室居所的重要职能，也是摩纳哥公共生活的核心场所。</p></div></article>
+        </div>
+        <div class="timeline-meter" aria-hidden="true"><span></span><b>01</b><i>— 04</i></div>
       </div>
     </section>
 
@@ -78,9 +90,9 @@
         <p class="heading-note placeholder">这座宫殿融合了中世纪防御工事、文艺复兴时期建筑以及古典主义风格的建筑立面，迥异的建筑风格，展现了数个世纪以来摩纳哥建筑的变迁。厚重的防御塔楼与庄严的王室、典雅的拱廊相融，形成了一处兼具历史厚重感与建筑艺术之美的建筑群。</p>
       </div>
       <div class="space-grid">
-        <article class="space-card reveal"><div class="space-image space-one"></div><p class="card-index">01 — COUR D'HONNEUR</p><h3>荣誉庭院</h3><p class="placeholder">荣誉庭院是整座宫殿的建筑核心，其中上下两层绘有壁画的开放式拱廊，既是举行仪式时使用的观礼阳台，也是宫殿的主要出入口，同时还连接着宫殿的主要厅室。</p></article>
-        <article class="space-card reveal"><div class="space-image space-two"></div><p class="card-index">02 — SALLE DU TRÔNE</p><h3>王座厅</h3><p class="placeholder">王座厅是宫殿厅室中规模最大的。厅内天顶壁画相传出自奥拉齐奥·德·费拉里之手，描绘了亚历山大大帝投降的场景。厅中设有一张帝政风格的王座，上方覆有红色丝绸华盖，下方地面则铺设了产自意大利卡拉拉的大理石，尽显庄重典雅。</p></article>
-        <article class="space-card reveal"><div class="space-image space-three"></div><p class="card-index">03 — GRANDS APPARTEMENTS</p><h3>国家套房</h3><p class="placeholder">宫殿厅室始建于16世纪，此后又受到凡尔赛宫建筑风格的影响。厅室布局沿着宫廷礼仪的行进路线依次展开，游客可以沿途参观赫拉克勒斯长廊、镜厅、军官厅以及数间装饰华丽的接待厅，最终抵达王座厅。</p></article>
+        <article class="space-card reveal"><div class="space-image space-one" data-parallax="0.10"></div><p class="card-index">01 — COUR D'HONNEUR</p><h3>荣誉庭院</h3><p class="placeholder">荣誉庭院是整座宫殿的建筑核心，其中上下两层绘有壁画的开放式拱廊，既是举行仪式时使用的观礼阳台，也是宫殿的主要出入口，同时还连接着宫殿的主要厅室。</p></article>
+        <article class="space-card reveal"><div class="space-image space-two" data-parallax="0.16"></div><p class="card-index">02 — SALLE DU TRÔNE</p><h3>王座厅</h3><p class="placeholder">王座厅是宫殿厅室中规模最大的。厅内天顶壁画相传出自奥拉齐奥·德·费拉里之手，描绘了亚历山大大帝投降的场景。厅中设有一张帝政风格的王座，上方覆有红色丝绸华盖，下方地面则铺设了产自意大利卡拉拉的大理石，尽显庄重典雅。</p></article>
+        <article class="space-card reveal"><div class="space-image space-three" data-parallax="0.12"></div><p class="card-index">03 — GRANDS APPARTEMENTS</p><h3>国家套房</h3><p class="placeholder">宫殿厅室始建于16世纪，此后又受到凡尔赛宫建筑风格的影响。厅室布局沿着宫廷礼仪的行进路线依次展开，游客可以沿途参观赫拉克勒斯长廊、镜厅、军官厅以及数间装饰华丽的接待厅，最终抵达王座厅。</p></article>
       </div>
     </section>
 
@@ -96,7 +108,7 @@
         <p class="standfirst placeholder">壁画是亲王宫礼仪性建筑空间中不可或缺的一部分。其题材涵盖古典神话、英雄叙事以及四季寓意等内容，使这座王室居所与意大利和法国的艺术传统相互联结。</p>
       </div>
       <div class="story-grid">
-        <figure class="portrait-image reveal"><span>宫殿壁画与历史空间</span></figure>
+        <figure class="portrait-image reveal" data-parallax="0.10"><span>宫殿壁画与历史空间</span></figure>
         <div class="story-text reveal">
           <h3>沉睡数百年的色彩</h3>
           <p class="placeholder">宫廷庭院上层的拱廊被称为“赫拉克勒斯长廊”。长廊天花板上绘有取材自“赫拉克勒斯十二功绩”的场景，使这里不仅成为了宫廷仪仗和行进的重要通道，更是亲王公开亮相与举行礼仪活动的空间。</p>
@@ -106,14 +118,17 @@
       </div>
     </section>
 
-    <section class="preservation" id="preservation">
-      <div class="preservation-art" role="img" aria-label="宫殿历史艺术细节"></div>
-      <div class="preservation-panel reveal">
-        <span class="section-no pale">05</span>
-        <p class="eyebrow light">修复与保护</p>
-        <h2>让历史<br>重现光彩</h2>
-        <p class="placeholder">兰尼埃三世亲王于1949年继位后，启动了一项大规模的宫殿整修工程。庭院壁画得到修复，南翼建筑被重新修建，多间国事厅室也重新配置陈设并进行了装饰更新。</p>
-        <p class="placeholder">修复工作还包括宫殿的大理石天花板，其中几处增添了装饰性镶嵌的图案，融入了兰尼埃三世亲王的双R字母徽记。这些工程不仅有利于保护宫殿，还能进一步强化了许多礼仪厅所呈现的十八世纪风格</p>
+    <section class="preservation cinematic-section" id="preservation" data-cinematic="preservation">
+      <div class="preservation-stage">
+        <div class="preservation-art" role="img" aria-label="宫殿历史艺术细节"></div>
+        <div class="preservation-vignette" aria-hidden="true"></div>
+        <div class="preservation-panel">
+          <span class="section-no pale">05</span>
+          <p class="eyebrow light">修复与保护</p>
+          <h2>让历史<br>重现光彩</h2>
+          <p class="placeholder">兰尼埃三世亲王于1949年继位后，启动了一项大规模的宫殿整修工程。庭院壁画得到修复，南翼建筑被重新修建，多间国事厅室也重新配置陈设并进行了装饰更新。</p>
+          <p class="placeholder">修复工作还包括宫殿的大理石天花板，其中几处增添了装饰性镶嵌的图案，融入了兰尼埃三世亲王的双R字母徽记。这些工程不仅有利于保护宫殿，还能进一步强化了许多礼仪厅所呈现的十八世纪风格</p>
+        </div>
       </div>
     </section>
 

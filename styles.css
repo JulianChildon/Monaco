@@ -135,6 +135,97 @@ html[lang="zh-CN"] footer>div a{font-family:"Noto Serif SC","Songti SC",serif;fo
   .visit-item:last-child{border-bottom:0}
 }
 
+/* Cinematic scroll direction */
+.scroll-progress{position:fixed;z-index:90;left:0;right:0;top:0;height:2px;pointer-events:none;background:rgba(255,255,255,.08)}
+.scroll-progress span{display:block;width:100%;height:100%;background:var(--gold);transform:scaleX(0);transform-origin:left center;will-change:transform}
+.cinematic-section{--scene-progress:0}
+
+.hero.cinematic-section{height:220svh;min-height:1500px;overflow:visible;background:#160b0d}
+.hero-stage{position:sticky;top:0;height:100svh;min-height:720px;overflow:hidden;color:#fff;background:#160b0d}
+.hero-photo,.hero-exterior{will-change:transform,clip-path}
+.hero-photo{z-index:0;transform:scale(var(--hero-scale,1.08));transform-origin:50% 48%}
+.hero-exterior{position:absolute;z-index:1;inset:-3%;background:url("./assets/images/palace-exterior.jpg") center/cover;clip-path:circle(var(--hero-reveal,.1%) at 72% 62%);transform:scale(var(--hero-exterior-scale,1.12));filter:saturate(.84) contrast(1.03)}
+.hero-shade{z-index:2;opacity:var(--hero-shade-opacity,1);will-change:opacity}
+.hero-copy{z-index:3;opacity:var(--hero-copy-opacity,1);transform:translate3d(0,var(--hero-copy-y,-40%),0);will-change:transform,opacity}
+.hero-chapter{position:absolute;z-index:3;left:8vw;bottom:12vh;max-width:620px;opacity:var(--hero-chapter-opacity,0);transform:translate3d(0,var(--hero-chapter-y,45px),0);will-change:transform,opacity}
+.hero-chapter span{display:block;margin-bottom:16px;color:var(--gold);font-size:9px;font-weight:500;letter-spacing:.28em}
+.hero-chapter p{margin:0;font:400 clamp(56px,7.5vw,112px)/.92 var(--serif);letter-spacing:.04em}
+.hero-chapter small{display:block;margin-top:25px;padding-left:3px;font-size:11px;font-weight:300;letter-spacing:.18em}
+.hero-stage .photo-credit,.hero-stage .scroll-mark{z-index:4;opacity:var(--hero-ui-opacity,1);will-change:opacity}
+.scroll-mark:after{content:"";display:block;width:1px;height:40px;margin:12px auto 0;background:currentColor;animation:scrollPulse 1.8s ease-in-out infinite;transform-origin:top}
+@keyframes scrollPulse{0%,100%{transform:scaleY(.25);opacity:.35}50%{transform:scaleY(1);opacity:1}}
+
+@media(min-width:901px){
+  .history-section.cinematic-section{height:360svh;min-height:2600px;padding:0;overflow:visible}
+  .history-stage{position:sticky;top:0;height:100svh;min-height:720px;overflow:hidden;padding:10vh 8vw;background:radial-gradient(circle at 80% 45%,rgba(186,154,98,.1),transparent 31%),linear-gradient(135deg,#45101d 0%,#2d0c16 100%)}
+  .history-stage:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 49.95%,rgba(255,255,255,.1) 50%,transparent 50.05%);pointer-events:none}
+  .history-stage .chapter-heading{position:absolute;z-index:2;left:8vw;top:12vh;width:35vw;grid-template-columns:72px 1fr;gap:2.5vw}
+  .history-stage .chapter-heading h2{font-size:clamp(48px,5vw,82px);line-height:1.12}
+  .history-stage .timeline{position:absolute;z-index:2;left:55%;right:9vw;top:0;height:100%;margin:0;border:0}
+  .history-stage .timeline-item{position:absolute;left:0;top:50%;width:100%;display:block;padding:0;border:0;opacity:0;transform:translate3d(0,90px,0);will-change:transform,opacity}
+  .history-stage .timeline-year{font-size:clamp(78px,9.5vw,150px);letter-spacing:-.045em;color:var(--gold);opacity:.2;margin:0 0 -16px -5px}
+  .history-stage .timeline-item h3{font-size:clamp(30px,3vw,46px);margin:0 0 22px}
+  .history-stage .timeline-item div p{max-width:580px;font-size:14px;line-height:2;color:rgba(255,255,255,.75)}
+  .timeline-meter{position:absolute;z-index:3;right:3vw;top:50%;height:38vh;min-height:250px;transform:translateY(-50%);display:grid;grid-template-rows:1fr auto;grid-template-columns:18px 38px;column-gap:10px;color:rgba(255,255,255,.7)}
+  .timeline-meter:before{content:"";grid-row:1;grid-column:1;width:1px;height:100%;justify-self:center;background:rgba(255,255,255,.2)}
+  .timeline-meter span{position:absolute;left:8px;top:0;width:2px;height:100%;background:var(--gold);transform:scaleY(var(--history-progress,0));transform-origin:top;will-change:transform}
+  .timeline-meter b,.timeline-meter i{grid-row:2;font-size:9px;letter-spacing:.15em;font-style:normal;font-weight:400;margin-top:14px}
+  .timeline-meter b{grid-column:1}.timeline-meter i{grid-column:2;color:rgba(255,255,255,.38)}
+
+  .preservation.cinematic-section{height:200svh;min-height:1500px;display:block;overflow:visible}
+  .preservation-stage{position:sticky;top:0;height:100svh;min-height:760px;overflow:hidden;background:#24130f}
+  .preservation-art{position:absolute;inset:-4%;filter:saturate(.66);transform:scale(var(--preservation-scale,1.1));will-change:transform}
+  .preservation-vignette{position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,rgba(20,8,8,.08),rgba(20,8,8,.02) 48%,rgba(20,8,8,.38));opacity:var(--preservation-vignette,.2)}
+  .preservation-panel{position:absolute;z-index:2;right:0;top:0;width:47vw;height:100%;padding:9vh 7vw;background:rgba(102,22,42,.97);clip-path:inset(0 0 0 var(--preservation-clip,100%));transform:translate3d(var(--preservation-panel-x,8vw),0,0);will-change:clip-path,transform;display:flex;flex-direction:column;justify-content:center}
+  .preservation-panel:before{content:"";position:absolute;left:0;top:8vh;bottom:8vh;width:1px;background:rgba(255,255,255,.25)}
+}
+
+[data-parallax]{transform:translate3d(0,var(--parallax-y,0),0) scale(1.045);will-change:transform}
+.space-card{position:relative}
+.space-card .space-image{transition:filter .6s ease}
+.space-card:hover .space-image{filter:saturate(.95)}
+
+@media(max-width:900px){
+  .hero.cinematic-section{height:175svh;min-height:1100px}
+  .hero-stage{min-height:650px}
+  .hero-exterior{clip-path:circle(var(--hero-reveal,.1%) at 68% 66%)}
+  .hero-chapter{left:7vw;right:7vw;bottom:12vh}
+  .hero-chapter p{font-size:clamp(48px,13vw,78px)}
+  .hero-chapter small{max-width:430px;line-height:1.8}
+  .history-stage{position:relative;height:auto}
+  .timeline-meter{display:none}
+  .preservation-stage{display:grid;grid-template-columns:1fr}
+  .preservation-vignette{display:none}
+  .preservation-art{position:relative;inset:auto;transform:none}
+  .preservation-panel{position:relative;inset:auto;width:auto;height:auto;clip-path:none;transform:none}
+}
+
+@media(max-width:600px){
+  .hero.cinematic-section{height:160svh;min-height:960px}
+  .hero-stage{height:100svh;min-height:600px}
+  .hero-chapter{bottom:14vh}
+  .hero-chapter small{font-size:9px;letter-spacing:.12em}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .hero.cinematic-section{height:100svh;min-height:650px;overflow:hidden}
+  .hero-stage{position:relative}
+  .hero-photo{transform:scale(1.02)}
+  .hero-exterior,.hero-chapter{display:none}
+  .history-section.cinematic-section{height:auto;min-height:0;padding:110px 7vw 125px}
+  .history-stage{position:relative;height:auto;min-height:0;padding:0;background:none}
+  .history-stage:before,.timeline-meter{display:none}
+  .history-stage .chapter-heading{position:relative;left:auto;top:auto;width:auto}
+  .history-stage .timeline{position:relative;inset:auto;height:auto;margin-left:0;border-top:1px solid rgba(255,255,255,.32)}
+  .history-stage .timeline-item{position:relative;inset:auto;width:auto;display:grid;opacity:1!important;transform:none!important;padding:45px 0;border-bottom:1px solid rgba(255,255,255,.32)}
+  .history-stage .timeline-year{font-size:42px;opacity:1;margin:0;color:var(--gold)}
+  .preservation.cinematic-section{height:auto;min-height:0}
+  .preservation-stage{position:relative;height:auto;min-height:0;display:grid;grid-template-columns:1.12fr .88fr}
+  .preservation-art,.preservation-panel{position:relative;inset:auto;transform:none;clip-path:none;width:auto;height:auto}
+  [data-parallax]{transform:none}
+  .scroll-mark:after{animation:none}
+}
+
 /* Opening image */
 .hero-photo{
   background-image:url("./assets/images/prince-palace-monaco1.webp");
