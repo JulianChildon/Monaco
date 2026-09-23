@@ -84,7 +84,7 @@ function renderHero(scrollPosition) {
   const chapterEntry = smoothstep((progress - 0.6) / 0.2);
 
   hero.style.setProperty('--hero-scale', (1.08 - (progress * 0.065)).toFixed(4));
-  hero.style.setProperty('--hero-exterior-scale', (1.12 - (reveal * 0.1)).toFixed(4));
+  hero.style.setProperty('--hero-exterior-scale', (1.02 - (reveal * 0.02)).toFixed(4));
   hero.style.setProperty('--hero-reveal', `${Math.max(0.1, reveal * 145).toFixed(2)}%`);
   hero.style.setProperty('--hero-copy-opacity', (1 - copyExit).toFixed(3));
   hero.style.setProperty('--hero-copy-y', `${-40 - (copyExit * 75)}%`);

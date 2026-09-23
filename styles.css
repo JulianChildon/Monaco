@@ -144,7 +144,7 @@ html[lang="zh-CN"] footer>div a{font-family:"Noto Serif SC","Songti SC",serif;fo
 .hero-stage{position:sticky;top:0;height:100svh;min-height:720px;overflow:hidden;color:#fff;background:#160b0d}
 .hero-photo,.hero-exterior{will-change:transform,clip-path}
 .hero-photo{z-index:0;transform:scale(var(--hero-scale,1.08));transform-origin:50% 48%}
-.hero-exterior{position:absolute;z-index:1;inset:-3%;background:url("./assets/images/palace-exterior.jpg") center/cover;clip-path:circle(var(--hero-reveal,.1%) at 72% 62%);transform:scale(var(--hero-exterior-scale,1.12));filter:saturate(.84) contrast(1.03)}
+.hero-exterior{position:absolute;z-index:1;inset:0;background:#172536 url("./assets/images/prince-palace-monaco1.png") center/cover no-repeat;clip-path:circle(var(--hero-reveal,.1%) at 72% 62%);transform:scale(var(--hero-exterior-scale,1.02));filter:saturate(.84) contrast(1.03)}
 .hero-shade{z-index:2;opacity:var(--hero-shade-opacity,1);will-change:opacity}
 .hero-copy{z-index:3;opacity:var(--hero-copy-opacity,1);transform:translate3d(0,var(--hero-copy-y,-40%),0);will-change:transform,opacity}
 .hero-chapter{position:absolute;z-index:3;left:8vw;bottom:12vh;max-width:620px;opacity:var(--hero-chapter-opacity,0);transform:translate3d(0,var(--hero-chapter-y,45px),0);will-change:transform,opacity}
@@ -188,7 +188,7 @@ html[lang="zh-CN"] footer>div a{font-family:"Noto Serif SC","Songti SC",serif;fo
 @media(max-width:900px){
   .hero.cinematic-section{height:175svh;min-height:1100px}
   .hero-stage{min-height:650px}
-  .hero-exterior{clip-path:circle(var(--hero-reveal,.1%) at 68% 66%)}
+  .hero-exterior{background-size:cover;clip-path:circle(var(--hero-reveal,.1%) at 68% 66%)}
   .hero-chapter{left:7vw;right:7vw;bottom:12vh}
   .hero-chapter p{font-size:clamp(48px,13vw,78px)}
   .hero-chapter small{max-width:430px;line-height:1.8}
