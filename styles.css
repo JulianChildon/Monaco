@@ -154,6 +154,8 @@ html[lang="zh-CN"] footer>div a{font-family:"Noto Serif SC","Songti SC",serif;fo
   .intro .ornament{display:none}
 }
 
+.visit-section a[href^="https://www.visitepalaisdemonaco.com/"]{text-decoration:underline;text-underline-offset:4px}
+
 /* The page stays readable if JavaScript is delayed or unavailable. */
 .hero{background-color:var(--wine-deep)}
 .reveal{opacity:1;transform:none}
