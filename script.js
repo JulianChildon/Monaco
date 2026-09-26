@@ -1,15 +1,21 @@
-const loader = document.querySelector('.loader');
-window.addEventListener('load', () => setTimeout(() => loader.classList.add('is-hidden'), 350));
+if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('reveal-pending');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in-view');
-      observer.unobserve(entry.target);
+  document.querySelectorAll('.reveal').forEach((element) => {
+    // Keep content already on screen visible, even if this script arrived late.
+    if (element.getBoundingClientRect().top > window.innerHeight) {
+      element.classList.add('reveal-pending');
+      observer.observe(element);
     }
   });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+}
 
 document.querySelectorAll('.accordion-trigger').forEach((button) => {
   button.addEventListener('click', () => {

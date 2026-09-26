@@ -145,3 +145,9 @@ html[lang="zh-CN"] footer>div a{font-family:"Noto Serif SC","Songti SC",serif;fo
 @media(max-width:600px){
   .hero-photo{background-position:53% center}
 }
+
+/* The page stays readable if JavaScript is delayed or unavailable. */
+.hero{background-color:var(--wine-deep)}
+.reveal{opacity:1;transform:none}
+.reveal.reveal-pending{opacity:0;transform:translateY(35px)}
+@media(prefers-reduced-motion:reduce){.reveal.reveal-pending{opacity:1;transform:none}}
