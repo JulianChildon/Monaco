@@ -146,6 +146,14 @@ html[lang="zh-CN"] footer>div a{font-family:"Noto Serif SC","Songti SC",serif;fo
   .hero-photo{background-position:53% center}
 }
 
+@media(max-width:600px){
+  html[lang="zh-CN"] .intro{min-height:0;padding:90px 7vw 96px}
+  html[lang="zh-CN"] .intro h2{font-size:clamp(36px,9.6vw,42px);line-height:1.2;letter-spacing:0}
+  .intro-summary{max-width:none;margin:38px 0 0}
+  .arch-window{position:relative;right:auto;bottom:auto;width:min(100%,360px);height:390px;margin:48px auto 0}
+  .intro .ornament{display:none}
+}
+
 /* The page stays readable if JavaScript is delayed or unavailable. */
 .hero{background-color:var(--wine-deep)}
 .reveal{opacity:1;transform:none}
