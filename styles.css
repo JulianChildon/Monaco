@@ -21,8 +21,7 @@ html[lang="zh-CN"] .timeline-year{font-family:"Noto Serif SC","Songti SC",serif}
 html[lang="zh-CN"] .brand{line-height:1.25;letter-spacing:.18em}
 html[lang="zh-CN"] .brand small{letter-spacing:.45em}
 html[lang="zh-CN"] .desktop-nav{letter-spacing:.16em}
-html[lang="zh-CN"] .hero h1{font-family:"Noto Serif SC","Songti SC",serif;font-size:clamp(76px,9.2vw,142px);font-weight:400;line-height:.93;letter-spacing:.04em}
-html[lang="zh-CN"] .hero h1 em{font-style:normal;margin-left:1em}
+html[lang="zh-CN"] .hero h1{font-family:"Noto Serif SC","Songti SC",serif;font-size:clamp(30px,10.8vw,128px);font-weight:400;line-height:1.1;letter-spacing:.01em;white-space:nowrap}
 html[lang="zh-CN"] .eyebrow{letter-spacing:.34em}
 html[lang="zh-CN"] .intro{min-height:1050px;padding-top:145px}
 html[lang="zh-CN"] .intro-title .eyebrow{margin:34px 0 20px}
@@ -88,7 +87,6 @@ html[lang="zh-CN"] .standfirst{font-family:"Noto Serif SC","Songti SC",serif;fon
 html[lang="zh-CN"] footer>div a{font-family:"Noto Serif SC","Songti SC",serif;font-size:18px;line-height:2}
 
 @media(max-width:900px){
-  html[lang="zh-CN"] .hero h1{font-size:clamp(68px,14vw,104px)}
   html[lang="zh-CN"] .intro{min-height:900px;padding-top:115px}
   html[lang="zh-CN"] .intro h2{font-size:clamp(55px,11vw,82px)}
   .intro-summary{max-width:360px;margin:50px 0 0}
@@ -113,8 +111,6 @@ html[lang="zh-CN"] footer>div a{font-family:"Noto Serif SC","Songti SC",serif;fo
   .visit-item:nth-child(3){padding-left:0}
 }
 @media(max-width:600px){
-  html[lang="zh-CN"] .hero h1{font-size:58px;line-height:1}
-  html[lang="zh-CN"] .hero h1 em{margin-left:.6em}
   html[lang="zh-CN"] .intro{min-height:820px}
   html[lang="zh-CN"] .intro h2{font-size:48px}
   .intro-summary{margin-top:38px;max-width:82%}
