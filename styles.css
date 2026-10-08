@@ -157,8 +157,21 @@ html[lang="zh-CN"] footer>div a{font-family:"Noto Serif SC","Songti SC",serif;fo
 .maker-credit-names{white-space:nowrap}
 .maker-credit-names strong{margin-left:.4em}
 .maker-credit strong{color:#f3d49c;font-weight:500}
+.maker-credit-note{display:inline-flex;align-items:center;justify-content:center;gap:7px;transition:opacity 1s ease}
+.maker-credit-note[hidden]{display:none}
+.maker-credit-note.is-loaded{color:#9ee7ae}
+.maker-credit-note.is-error{color:#ffd2a3}
+.maker-credit-note.is-fading{opacity:0}
+.maker-credit-spinner{width:13px;height:13px;flex:none;border:2px solid rgba(255,255,255,.4);border-top-color:#f3d49c;border-radius:50%;animation:maker-credit-spin .8s linear infinite}
+.maker-credit-note.is-loaded .maker-credit-spinner,.maker-credit-note.is-error .maker-credit-spinner{display:none}
+@keyframes maker-credit-spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.maker-credit-spinner{animation:none}.maker-credit-note{transition:none}}
+.site-header.images-loaded{height:126px;padding-bottom:48px}
+.site-header.images-loaded .maker-credit{min-height:36px}
 @media(max-width:900px){.site-header{height:142px}}
 @media(max-width:600px){.site-header{height:136px;padding:20px 6vw 62px}.maker-credit{padding:6px 4vw}}
+@media(max-width:900px){.site-header.images-loaded{height:118px}}
+@media(max-width:600px){.site-header.images-loaded{padding-bottom:48px}}
 
 /* The page stays readable if JavaScript is delayed or unavailable. */
 .hero{background-color:var(--wine-deep)}
