@@ -148,3 +148,109 @@ if (hero) {
   });
   mobile.addEventListener?.('change', () => requestHeroRender(true));
 }
+
+const historySection = document.querySelector('#history');
+if (historySection) {
+  const stage = historySection.querySelector('.history-stage');
+  const heading = historySection.querySelector('.chapter-heading');
+  const panel = historySection.querySelector('.history-reel-panel');
+  const track = historySection.querySelector('.timeline');
+  const items = [...historySection.querySelectorAll('.timeline-item')];
+  const counter = historySection.querySelector('.history-reel-counter b');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const stacked = window.matchMedia('(max-width: 900px)');
+  const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
+  const smoothstep = (value) => {
+    const t = clamp(value);
+    return t * t * (3 - 2 * t);
+  };
+  let enabled = false;
+  let sceneTop = 0;
+  let travel = 1;
+  let slotHeight = 0;
+  let targetScroll = window.scrollY;
+  let renderedScroll = targetScroll;
+  let frame = 0;
+  let measureFrame = 0;
+
+  function renderHistory() {
+    frame = 0;
+    if (!enabled) return;
+    renderedScroll += (targetScroll - renderedScroll) * 0.14;
+    if (Math.abs(targetScroll - renderedScroll) < 0.1) renderedScroll = targetScroll;
+
+    const progress = clamp((renderedScroll - sceneTop) / travel);
+    const position = clamp(progress * items.length - 0.5, 0, items.length - 1);
+    const index = Math.floor(position);
+    // Hold each introduction still before the next slot rolls into place.
+    const phase = index + smoothstep((position - index - 0.25) / 0.5);
+    historySection.style.setProperty('--history-track-y', `${(-phase * slotHeight).toFixed(2)}px`);
+    historySection.style.setProperty('--history-progress', progress.toFixed(4));
+    const current = String(Math.round(phase) + 1).padStart(2, '0');
+    if (counter.textContent !== current) counter.textContent = current;
+
+    if (Math.abs(targetScroll - renderedScroll) >= 0.1) frame = requestAnimationFrame(renderHistory);
+  }
+
+  function requestHistoryRender(immediate = false) {
+    if (!enabled) return;
+    targetScroll = window.scrollY;
+    if (immediate) renderedScroll = targetScroll;
+    if (!frame) frame = requestAnimationFrame(renderHistory);
+  }
+
+  function resetHistory() {
+    enabled = false;
+    historySection.classList.remove('is-reel');
+    ['--history-stage-height', '--history-travel', '--history-slot-height', '--history-track-y', '--history-progress'].forEach((name) => historySection.style.removeProperty(name));
+    counter.textContent = '01';
+  }
+
+  function measureHistory() {
+    if (frame) cancelAnimationFrame(frame);
+    frame = 0;
+    if (reducedMotion.matches || items.length < 2) {
+      resetHistory();
+      return;
+    }
+
+    historySection.classList.add('is-reel');
+    historySection.style.setProperty('--history-stage-height', `${window.innerHeight}px`);
+    historySection.style.setProperty('--history-travel', `${window.innerHeight * (items.length - 1) * 0.95}px`);
+    historySection.style.setProperty('--history-slot-height', '400px');
+    track.style.gridAutoRows = 'auto';
+    slotHeight = Math.ceil(Math.max(...items.map((item) => item.getBoundingClientRect().height)));
+    track.style.removeProperty('grid-auto-rows');
+    historySection.style.setProperty('--history-slot-height', `${slotHeight}px`);
+
+    const layout = window.getComputedStyle(stage);
+    const padding = parseFloat(layout.paddingTop) + parseFloat(layout.paddingBottom);
+    const requiredHeight = stacked.matches
+      ? heading.offsetHeight + panel.offsetHeight + parseFloat(layout.rowGap) + padding
+      : Math.max(heading.offsetHeight, panel.offsetHeight) + padding;
+    // A short landscape viewport keeps the complete, readable list instead.
+    if (requiredHeight > window.innerHeight) {
+      resetHistory();
+      return;
+    }
+
+    enabled = true;
+    sceneTop = historySection.getBoundingClientRect().top + window.scrollY;
+    travel = Math.max(historySection.offsetHeight - stage.offsetHeight, 1);
+    requestHistoryRender(true);
+  }
+
+  function requestHistoryMeasure() {
+    if (!measureFrame) measureFrame = requestAnimationFrame(() => {
+      measureFrame = 0;
+      measureHistory();
+    });
+  }
+
+  measureHistory();
+  window.addEventListener('scroll', () => requestHistoryRender(), { passive: true });
+  window.addEventListener('resize', requestHistoryMeasure);
+  window.addEventListener('load', requestHistoryMeasure);
+  reducedMotion.addEventListener?.('change', requestHistoryMeasure);
+  document.fonts?.ready.then(requestHistoryMeasure);
+}

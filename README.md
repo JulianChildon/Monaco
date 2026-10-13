@@ -28,6 +28,8 @@ python -m http.server 8080
 
 图片链接现已统一为 HTTPS，适用于通过 HTTPS 发布的网站。
 
+历史沿革采用随页面滚动切换的纵向滚轴，年份与介绍一起滚动，并在每个时间点停留以便阅读。手机竖屏使用上下布局；视口高度不足或开启“减少动态效果”时，自动显示完整时间轴列表。
+
 ## GitHub Pages 部署
 
 1. 将整个项目提交到 GitHub 仓库，务必包含 `assets/`、`.nojekyll`、`index.html`、`styles.css` 和 `script.js`。
