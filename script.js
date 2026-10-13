@@ -77,8 +77,73 @@ if (contactForm) {
   });
 }
 
-window.addEventListener('scroll', () => {
-  const photo = document.querySelector('.hero-photo');
-  const amount = Math.min(window.scrollY * 0.12, 90);
-  photo.style.transform = `scale(1.02) translateY(${amount}px)`;
-}, { passive: true });
+const hero = document.querySelector('[data-cinematic="hero"]');
+if (hero) {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const mobile = window.matchMedia('(max-width: 600px)');
+  const clamp = (value) => Math.min(1, Math.max(0, value));
+  const smoothstep = (value) => {
+    const progress = clamp(value);
+    return progress * progress * (3 - 2 * progress);
+  };
+
+  let sceneTop = 0;
+  let sceneDistance = 1;
+  let targetScroll = window.scrollY;
+  let renderedScroll = targetScroll;
+  let frame = 0;
+
+  function measureHero() {
+    sceneTop = hero.getBoundingClientRect().top + window.scrollY;
+    sceneDistance = Math.max(hero.offsetHeight - window.innerHeight, 1);
+  }
+
+  function renderHero() {
+    frame = 0;
+    if (reducedMotion.matches) return;
+
+    const delta = targetScroll - renderedScroll;
+    renderedScroll += delta * 0.14;
+    if (Math.abs(delta) < 0.1) renderedScroll = targetScroll;
+
+    const progress = clamp((renderedScroll - sceneTop) / sceneDistance);
+    const reveal = smoothstep((progress - 0.13) / 0.59);
+    const copyExit = smoothstep((progress - 0.06) / 0.33);
+    const chapterEntry = smoothstep((progress - 0.6) / 0.2);
+
+    hero.style.setProperty('--hero-scale', (1.08 - progress * 0.065).toFixed(4));
+    hero.style.setProperty('--hero-exterior-scale', (1.02 - reveal * 0.02).toFixed(4));
+    hero.style.setProperty('--hero-reveal', `${Math.max(0.1, reveal * 145).toFixed(2)}%`);
+    hero.style.setProperty('--hero-copy-opacity', (1 - copyExit).toFixed(3));
+    hero.style.setProperty('--hero-copy-y', `${(mobile.matches ? -25 : -40) - copyExit * 75}%`);
+    hero.style.setProperty('--hero-chapter-opacity', chapterEntry.toFixed(3));
+    hero.style.setProperty('--hero-chapter-y', `${(1 - chapterEntry) * 45}px`);
+    hero.style.setProperty('--hero-shade-opacity', (1 - reveal * 0.32).toFixed(3));
+    hero.style.setProperty('--hero-ui-opacity', (1 - smoothstep(progress / 0.24)).toFixed(3));
+
+    if (Math.abs(targetScroll - renderedScroll) >= 0.1) frame = requestAnimationFrame(renderHero);
+  }
+
+  function requestHeroRender(immediate = false) {
+    targetScroll = window.scrollY;
+    if (immediate) renderedScroll = targetScroll;
+    if (!frame) frame = requestAnimationFrame(renderHero);
+  }
+
+  measureHero();
+  requestHeroRender(true);
+  window.addEventListener('scroll', () => requestHeroRender(), { passive: true });
+  window.addEventListener('load', () => {
+    measureHero();
+    requestHeroRender(true);
+  });
+  window.addEventListener('resize', () => {
+    measureHero();
+    requestHeroRender(true);
+  });
+  reducedMotion.addEventListener?.('change', () => {
+    measureHero();
+    requestHeroRender(true);
+  });
+  mobile.addEventListener?.('change', () => requestHeroRender(true));
+}
