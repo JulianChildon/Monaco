@@ -108,6 +108,7 @@ if (hero) {
 
     const progress = clamp((renderedScroll - sceneTop) / sceneDistance);
     const reveal = smoothstep((progress - 0.13) / 0.59);
+    const shadeFade = smoothstep((progress - 0.13) / 0.75);
     const copyExit = smoothstep((progress - 0.06) / 0.33);
     const chapterEntry = smoothstep((progress - 0.6) / 0.2);
 
@@ -118,7 +119,7 @@ if (hero) {
     hero.style.setProperty('--hero-copy-y', `${(mobile.matches ? -25 : -40) - copyExit * 75}%`);
     hero.style.setProperty('--hero-chapter-opacity', chapterEntry.toFixed(3));
     hero.style.setProperty('--hero-chapter-y', `${(1 - chapterEntry) * 45}px`);
-    hero.style.setProperty('--hero-shade-opacity', (1 - reveal * 0.32).toFixed(3));
+    hero.style.setProperty('--hero-shade-opacity', (1 - shadeFade).toFixed(3));
     hero.style.setProperty('--hero-ui-opacity', (1 - smoothstep(progress / 0.24)).toFixed(3));
 
     if (Math.abs(targetScroll - renderedScroll) >= 0.1) frame = requestAnimationFrame(renderHero);

@@ -179,23 +179,24 @@ html[lang="zh-CN"] footer>div a{font-family:"Noto Serif SC","Songti SC",serif;fo
 .reveal.reveal-pending{opacity:0;transform:translateY(35px)}
 @media(prefers-reduced-motion:reduce){.reveal.reveal-pending{opacity:1;transform:none}}
 /* Scroll-driven opening scene */
-.hero.cinematic-section{height:220svh;min-height:1500px;overflow:visible;background:var(--wine-deep)}
-.hero-stage{position:sticky;top:0;height:100svh;min-height:720px;overflow:hidden;color:#fff;background:var(--wine-deep)}
+.hero.cinematic-section{height:220svh;min-height:1500px;overflow:visible;background:#160b0d}
+.hero-stage{position:sticky;top:0;height:100svh;min-height:720px;overflow:hidden;color:#fff;background:#160b0d}
 .hero-photo,.hero-exterior{will-change:transform,clip-path}
 .hero-photo{z-index:0;transform:scale(var(--hero-scale,1.08));transform-origin:50% 48%}
-.hero-exterior{position:absolute;z-index:1;inset:0;background:#172536 url("https://juliandejong.de5.net/prince-palace-monaco-HD.png") center/contain no-repeat;clip-path:circle(var(--hero-reveal,.1%) at 72% 62%);transform:scale(var(--hero-exterior-scale,1.02))}
+.hero-exterior{position:absolute;z-index:1;inset:0;background:#172536 url("https://juliandejong.de5.net/prince-palace-monaco-HD.png") center/cover no-repeat;clip-path:circle(var(--hero-reveal,.1%) at 72% 62%);transform:scale(var(--hero-exterior-scale,1.02));filter:saturate(.84) contrast(1.03)}
 .hero-shade{z-index:2;opacity:var(--hero-shade-opacity,1);will-change:opacity}
 .hero-copy{z-index:3;opacity:var(--hero-copy-opacity,1);transform:translate3d(0,var(--hero-copy-y,-40%),0);will-change:transform,opacity}
-.hero-chapter{position:absolute;z-index:3;left:8vw;bottom:12vh;max-width:620px;opacity:var(--hero-chapter-opacity,0);transform:translate3d(0,var(--hero-chapter-y,45px),0);will-change:transform,opacity}
+.hero-chapter{position:absolute;z-index:3;left:8vw;bottom:12vh;max-width:620px;isolation:isolate;opacity:var(--hero-chapter-opacity,0);transform:translate3d(0,var(--hero-chapter-y,45px),0);text-shadow:0 2px 14px rgba(0,0,0,.75);will-change:transform,opacity}
+.hero-chapter::before{content:"";position:absolute;z-index:-1;inset:-26px -36px -30px -36px;background:linear-gradient(90deg,rgba(7,16,22,.74),rgba(7,16,22,.62) 75%,rgba(7,16,22,.48));filter:blur(24px);pointer-events:none}
 .hero-chapter span{display:block;margin-bottom:16px;color:var(--gold);font-size:9px;font-weight:500;letter-spacing:.28em}
 .hero-chapter p{margin:0;font:400 clamp(56px,7.5vw,112px)/.92 var(--serif);letter-spacing:.04em}
-.hero-chapter small{display:block;margin-top:25px;padding-left:3px;font-size:11px;font-weight:300;letter-spacing:.18em}
+.hero-chapter small{display:block;margin-top:25px;padding-left:3px;font-size:12px;font-weight:400;letter-spacing:.12em}
 .hero-stage .photo-credit,.hero-stage .scroll-mark{z-index:4;opacity:var(--hero-ui-opacity,1);will-change:opacity}
 
 @media(max-width:900px){
   .hero.cinematic-section{height:175svh;min-height:1100px}
   .hero-stage{min-height:650px}
-  .hero-exterior{clip-path:circle(var(--hero-reveal,.1%) at 68% 66%)}
+  .hero-exterior{background-size:cover;clip-path:circle(var(--hero-reveal,.1%) at 68% 66%)}
   .hero-chapter{left:7vw;right:7vw;bottom:12vh}
   .hero-chapter p{font-size:clamp(48px,13vw,78px)}
   .hero-chapter small{max-width:430px;line-height:1.8}
@@ -205,7 +206,8 @@ html[lang="zh-CN"] footer>div a{font-family:"Noto Serif SC","Songti SC",serif;fo
   .hero-stage{height:100svh;min-height:600px}
   .hero-copy{transform:translate3d(0,var(--hero-copy-y,-25%),0)}
   .hero-chapter{bottom:14vh}
-  .hero-chapter small{font-size:9px;letter-spacing:.12em}
+  .hero-chapter::before{inset:-18px -22px -22px -22px;filter:blur(18px)}
+  .hero-chapter small{font-size:11px;letter-spacing:.08em;line-height:1.7}
 }
 @media(prefers-reduced-motion:reduce){
   .hero.cinematic-section{height:100svh;min-height:650px;overflow:hidden}
